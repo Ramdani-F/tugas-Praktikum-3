@@ -1,0 +1,163 @@
+:root {
+  --hijau-tua: #1f4d36;
+  --emas: #e3b448;
+  --pasir: #f1e2b6;
+  --putih-beras: #fffdf7;
+  --hijau-muda: #dcebd5;
+  --cokelat: #3a2a1c;
+  --teks: #2b2b2b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--teks);
+  line-height: 1.65;
+  background: #e9e5d8;
+}
+
+.halaman {
+  max-width: 1000px;
+  margin: 24px auto;
+  border: 2px solid var(--cokelat);
+}
+
+h1, h2, h3, .logo { font-family: Georgia, "Times New Roman", serif; }
+
+
+header {
+  background: var(--hijau-tua);
+  color: var(--putih-beras);
+  text-align: center;
+  padding: 36px 20px;
+  border-bottom: 2px solid var(--cokelat);
+}
+header h1 { font-size: 2.2rem; letter-spacing: .5px; }
+header p  { color: var(--emas); font-size: 1.1rem; margin-top: 4px; }
+
+
+nav {
+  background: var(--pasir);
+  display: flex;                    
+  justify-content: space-between;  
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 2px solid var(--cokelat);
+}
+.logo { font-size: 1.4rem; font-weight: bold; color: var(--hijau-tua); }
+nav ul { display: flex; gap: 8px; list-style: none; }
+nav a {
+  display: block;
+  padding: 6px 14px;
+  color: var(--cokelat);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+}
+nav a:hover, nav a.aktif { background: var(--hijau-tua); color: var(--putih-beras); }
+
+section {
+  display: grid;                 
+  grid-template-columns: 2fr 1fr;   
+  gap: 20px;
+  padding: 20px;
+  background: #d9d2bd;
+  border-bottom: 2px solid var(--cokelat);
+}
+
+article {
+  background: var(--putih-beras);
+  padding: 24px;
+  border: 2px solid var(--cokelat);
+}
+article h2 { color: var(--hijau-tua); margin-bottom: 10px; font-size: 1.6rem; }
+article h3 { color: var(--cokelat); margin: 18px 0 6px; }
+article p  { margin-bottom: 12px; }
+
+aside {
+  background: var(--hijau-muda);
+  padding: 20px;
+  border: 2px solid var(--cokelat);
+  align-self: start;
+}
+aside h3 { color: var(--hijau-tua); margin-bottom: 8px; }
+aside p  { font-size: .95rem; margin-bottom: 14px; }
+
+
+.menu-samping { list-style: none; margin-bottom: 18px; }
+.menu-samping li + li { margin-top: 6px; }
+.menu-samping a {
+  display: block;
+  padding: 8px 12px;
+  background: var(--hijau-tua);
+  color: var(--putih-beras);
+  text-decoration: none;
+  border-radius: 4px;
+}
+.menu-samping a:hover { background: var(--emas); color: var(--cokelat); }
+
+
+footer {
+  background: var(--cokelat);
+  color: var(--pasir);
+  text-align: center;
+  padding: 20px;
+  font-size: .95rem;
+}
+
+
+.sorotan {
+  background: var(--pasir);
+  border-left: 6px solid var(--emas);
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-style: italic;
+}
+
+.kartu-beras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 14px 0;
+}
+.kartu-beras div {
+  padding: 14px 10px;
+  text-align: center;
+  border: 2px solid var(--cokelat);
+  font-weight: 600;
+}
+.kartu-beras div:nth-child(1) { background: #fffdf7; }
+.kartu-beras div:nth-child(2) { background: #c9442f; color: #fffdf7; }
+.kartu-beras div:nth-child(3) { background: #f1e2b6; }
+.kartu-beras span { display: block; font-weight: 400; font-size: .85rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid var(--cokelat); padding: 8px 10px; text-align: left; }
+th { background: var(--hijau-tua); color: var(--putih-beras); }
+tbody tr:nth-child(even) { background: var(--hijau-muda); }
+
+.foto {
+  
+  width: 100%;
+  height: 160px;
+  border: 2px solid var(--cokelat);
+  margin: 12px 0;
+  background:
+    radial-gradient(circle at 20% 40%, var(--emas) 0 6px, transparent 7px) 0 0 / 38px 38px,
+    radial-gradient(circle at 70% 70%, var(--pasir) 0 5px, transparent 6px) 0 0 / 30px 30px,
+    var(--hijau-tua);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--putih-beras); font-family: Georgia, serif; font-size: 1.2;
+}
+
+
+.data-diri { max-width: 520px; }
+.data-diri th { width: 35%; }
+
+
+@media (max-width: 720px) {
+  nav { flex-direction: column; gap: 8px; }
+  section { grid-template-columns: 1fr; }
+  .kartu-beras { grid-template-columns: 1fr; }
+}
